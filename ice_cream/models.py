@@ -3,22 +3,35 @@ from django.db import models
 # Create your models here.
 
 from django.db import models
-from django.utils import timezone
+import datetime
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    # you can use an optional first positional arg to a Field
-    # to designate a human-readable format
-    pub_date = models.DateTimeField('date published', default=timezone.now)
+class IceCream(models.Model):
 
+
+    DAILY = 'Daily'
+    WEEKLY = 'Weekly'
+    SEASONAL = 'Seasonal'
+
+    VANILLA = 'Vanilla'
+    CHOCOLATE = 'Chocolate'
+
+    BASE_CHOICES = [
+        (VANILLA, 'Vanilla'),
+        (CHOCOLATE, 'Chocolate'),
+    ]
+
+    AVAILABLE_CHOICES = [
+        (DAILY, 'Daily'),
+        (WEEKLY, 'Weekly'),
+        (SEASONAL, 'Seasonal')
+    ]
+
+    flavor =  models.CharField(max_length=200)
+    base = models.CharField(max_length=200, choices=BASE_CHOICES)
+    available = models.CharField(max_length=200, choices=AVAILABLE_CHOICES)
+    featured = models.BooleanField(default=False)
+    date_churned = models.DateField('Date Churned', default=datetime.date.today)
+    likes = models.IntegerField(default=0)
 
     def __str__(self):
-          return self.question_text
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-
-    def __str__(self):
-          return self.choice_text
+          return self.flavor

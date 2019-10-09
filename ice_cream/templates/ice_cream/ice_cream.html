@@ -1,0 +1,23 @@
+{% load static %}
+<!-- load static enables css styling -->
+
+<html>
+  <head>
+    <title>ICE CREAM SHOP</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ice_cream/css/styles.css' %}">
+  </head>
+  <body>
+    <h2>{{heading}}</h2>
+    {% if ice_cream_list %}
+      {% for ice_cream in ice_cream_list %}
+    <p>{{ice_cream.flavor}}</p>
+      {% endfor %}
+    {% else %}
+    <p>All out of this flavor.</p>
+    {% endif %}
+
+
+
+
+  </body>
+</html>
