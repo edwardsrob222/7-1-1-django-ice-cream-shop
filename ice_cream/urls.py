@@ -9,4 +9,5 @@ urlpatterns = [
     path('weekly/', views.weekly, name='weekly'),
     path('seasonal/', views.seasonal, name='seasonal'),
     path('featured/', views.featured, name='featured'),
+    path('all/', views.all, name='all'),
 ]

@@ -1,1 +1,19 @@
+body {
+  background-color: #f79359;
+}
+.nav-bar {
+  margin-left: 20px;
+  font-size: 20px;
+  font-style: oblique;
+}
 
+h2 {
+  text-align: center;
+  font-style: oblique;
+}
+
+.container-fluid {
+  background-color: #ccc;
+  padding: 20px;
+  margin: 20px;
+}
