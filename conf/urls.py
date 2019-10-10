@@ -19,4 +19,7 @@ from django.urls import include, path
 urlpatterns = [
     path('ice_cream/', include('ice_cream.urls', namespace='ice_cream')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+
 ]

@@ -14,7 +14,9 @@
   <div class="container-fluid">
   <li>
     <p class="text-primary">{{ice_cream.flavor}}</p>
+  <!-- <form action="{% url 'ice_cream:like' ice_cream.id %}" method="post"> -->
     <button type="button" name="button">Like me</button>
+  <!-- </form> -->
   </li>
   </div>
   {% endfor %}

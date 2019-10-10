@@ -1,8 +1,9 @@
 {% extends 'ice_cream/base.html' %}
 {% block content %}
+<h2>Add a New Ice Cream</h2>
 <form method='post'>
   {% csrf_token %}
   {{form.as_p}}
-  <button>Add</button>
+  <button>Add New</button>
 </form>
 {% endblock content%}

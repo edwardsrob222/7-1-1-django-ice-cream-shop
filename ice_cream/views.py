@@ -13,7 +13,7 @@ def daily(request):
         'ice_cream_list': ice_cream_list,
         'heading': 'Daily ice cream flavors!'
     }
-    return render(request, 'ice_cream/list.html', context)
+    return render(request, 'ice_cream/ice_cream_list.html', context)
 
 def weekly(request):
     ice_cream_list = IceCream.objects.filter(available='Weekly')
@@ -21,7 +21,7 @@ def weekly(request):
         'ice_cream_list': ice_cream_list,
         'heading': 'Weekly ice cream flavors!'
     }
-    return render(request, 'ice_cream/list.html', context)
+    return render(request, 'ice_cream/ice_cream_list.html', context)
 
 def seasonal(request):
     ice_cream_list = IceCream.objects.filter(available='Seasonal')
@@ -29,7 +29,7 @@ def seasonal(request):
         'ice_cream_list': ice_cream_list,
         'heading': 'Seasonal ice cream flavors!'
     }
-    return render(request, 'ice_cream/list.html', context)
+    return render(request, 'ice_cream/ice_cream_list.html', context)
 
 def featured(request):
     ice_cream_list = IceCream.objects.filter(available='Featured')
@@ -37,7 +37,7 @@ def featured(request):
         'ice_cream_list': ice_cream_list,
         'heading': 'Featured ice cream flavors!'
     }
-    return render(request, 'ice_cream/list.html', context)
+    return render(request, 'ice_cream/ice_cream_list.html', context)
 
 def all(request):
     ice_cream_list = IceCream.objects.all()
@@ -45,4 +45,10 @@ def all(request):
         'ice_cream_list': ice_cream_list,
         'heading': 'All ice cream flavors!'
     }
-    return render(request, 'ice_cream/list.html', context)
+    return render(request, 'ice_cream/ice_cream_list.html', context)
+#pk is primary key
+# def like(request, pk):
+#     ice_cream = get_object_or_404(IceCream, pk=pk)
+#     ice_cream.likes += 1
+#     ice_cream.save()
+#     return HttpResponseRedirect(reverse('ice_cream:index'))
