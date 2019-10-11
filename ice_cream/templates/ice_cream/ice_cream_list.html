@@ -1,0 +1,16 @@
+{% extends 'ice_cream/base.html' %}
+
+{% block content %}
+  <h2 class="text-primary">ICE CREAM SHOP</h2>
+
+    {% for ice_cream in ice_cream_list %}
+    <!-- <p>Yum! Ice Cream</p> -->
+    <div class='ice-cream-item'>
+      <p class="text-primary">{{ice_cream.flavor}}</p>
+      <a href="{% url 'ice_cream:increment_likes' ice_cream.id %}">{{ice_cream.likes}}</a>
+      <a href="{% url 'ice_cream:delete' ice_cream.id %}">Delete Me</a>
+    </div>
+    {% endfor %}
+
+
+{% endblock content %}
